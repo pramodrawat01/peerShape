@@ -1,0 +1,19 @@
+in leftbar - 
+dashboard :
+assignment :
+courses/enrolled courses :
+achivements/certification :
+hackthons/events :
+communities :
+alums network :
+
+
+other features for community
+top performers : 
+projects section
+    - frontend
+    - backend
+    - web design
+    - full stack
+
+
