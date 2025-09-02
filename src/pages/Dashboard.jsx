@@ -2,11 +2,11 @@ import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import dbLogo from '../assets/dbLogo.png'
 import SearchBar from '../components/SearchBar'
+import Logout from '../components/Logout'
 
 const Dashboard = () => {
   return (
     <div className="flex h-screen">
-      {/* Sidebar */}
       
       <div className="w-50 bg-gradient-to-b from-[#4f5dc3] to-[#2C1F63] text-white m-3 rounded-2xl ">
         {/* <h2 className="text-xl font-bold mb-6">Dashboard</h2> */}
@@ -16,6 +16,7 @@ const Dashboard = () => {
           <Link to="/dashboard/assignments" className="hover:text-yellow-300">Assignments</Link>
           <Link to="/dashboard/courses" className="hover:text-yellow-300">Courses</Link>
           <Link to="/dashboard/notices" className="hover:text-yellow-300">Notices</Link>
+          <Logout/>
         </nav>
       </div>
       <div className='w-full p-3'>

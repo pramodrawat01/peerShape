@@ -1,6 +1,8 @@
 import React from 'react'
 
-const EnrolledCourses = () => {
+const EnrolledCourses = ({course}) => {
+
+  
   return (
     <div className="w-[400px] h-[180px] flex rounded-2xl shadow-lg overflow-hidden">
       
@@ -8,7 +10,7 @@ const EnrolledCourses = () => {
       <div className="bg-[#2c1f63] text-white w-[35%] flex flex-col justify-between p-5">
         <div>
           <p className="uppercase text-xs tracking-wider opacity-70">Course</p>
-          <h2 className="text-lg font-semibold">Javascript Fundamentals</h2>
+          <h2 className="text-lg font-semibold">{course.title}</h2>
         </div>
         <p className="text-sm opacity-80 cursor-pointer">View all chapters →</p>
       </div>

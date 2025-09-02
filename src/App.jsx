@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-import Sidebar from './components/Sidebar'
 import { Route, Routes } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import Home from './pages/Home'
@@ -12,9 +11,15 @@ import Overview from './components/Overview'
 import Assignments from './components/Assignments'
 import Courses from './components/Courses'
 import Notices from './components/Notices'
+import CourseDashboard from './components/CourseDashboard'
+import Signin from './pages/Signin'
+import { useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
 
 
 function App() {
+
+  const user = useSelector((state)=> state.auth.user)
 
 
   return (
@@ -22,10 +27,15 @@ function App() {
       
      <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/dashboard' element={<Dashboard/>} >
+        <Route path='/signin'  element={<Signin/>}/>
+        <Route 
+          path='/dashboard' 
+          element={user ? <Dashboard/> : <Navigate to='/signin'/>} 
+          >
           <Route index element= {<Overview/>}/>
           <Route path="assignments" element={<Assignments />} />
           <Route path="courses" element={<Courses />} />
+          <Route path='courses/:courseId' element={<CourseDashboard/>} />
           <Route path="notices" element={<Notices />} />
         </Route>
         <Route path='/community' element={<Community/>}/>
