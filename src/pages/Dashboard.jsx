@@ -6,9 +6,9 @@ import Logout from '../components/Logout'
 
 const Dashboard = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex  bg-black">
       
-      <div className="w-50 bg-gradient-to-b from-[#4f5dc3] to-[#2C1F63] text-white m-3 rounded-2xl ">
+      <div className="w-50 bg-gradient-to-t from-[#1d1543] to-[#101828] text-white m-3 rounded-2xl h-screen ">
         {/* <h2 className="text-xl font-bold mb-6">Dashboard</h2> */}
         <img src={dbLogo} alt='logo' className='h-[120px] w-[120px]'/>
         <nav className="flex flex-col gap-4 px-5">

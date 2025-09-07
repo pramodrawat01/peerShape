@@ -1,9 +1,12 @@
 import React from 'react'
 import maleStd from '../assets/m.jpg'
+import femaleStd from '../assets/f.jpg'
+import { useSelector } from 'react-redux'
 
 const Welcome = () => {
+  const user = useSelector(state=> state.auth.user)
   return (
-    <div className="h-[200px] w-full rounded-2xl bg-gradient-to-r from-[#2C1F63] to-[#6B7CFF] text-white flex items-center justify-between px-8 shadow-lg mt-3">
+    <div className="h-[200px] w-full rounded-2xl bg-gradient-to-r from-[#1d1543] to-[#101828] text-white flex items-center justify-between px-8 shadow-lg mt-3">
       
       {/* Info Section */}
       <div className="flex flex-col justify-between h-full py-6">
@@ -13,15 +16,15 @@ const Welcome = () => {
         </div>
         
         <div>
-          <h2 className="text-2xl font-bold">Welcome Back, John! 👋</h2>
+          <h2 className="text-2xl font-bold">Welcome Back, {user.name} 👋</h2>
           <p className="text-gray-200">Always stay updated in your student panel!</p>
         </div>
       </div>
 
       {/* Image Section */}
       <div className="flex-shrink-0">
-        <img 
-          src={maleStd} 
+        <img
+          src={user.gender === 'Female' ? femaleStd : maleStd }
           alt="student logo" 
           className="h-[180px] w-180px] object-cover rounded-3xl  shadow-md"
         />

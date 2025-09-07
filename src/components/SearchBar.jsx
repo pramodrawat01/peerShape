@@ -1,9 +1,13 @@
 import React from 'react'
 import { FiBell } from "react-icons/fi" // notification icon
+import { useSelector } from 'react-redux'
 
 const SearchBar = () => {
+
+  const user = useSelector(state => state.auth.user)
+  console.log(user)
   return (
-    <div className="w-full h-[50px] bg-white flex items-center justify-between px-6 shadow-md rounded-xl">
+    <div className="w-full h-[50px] bg-[#101828] flex items-center justify-between px-6 shadow-md rounded-xl text-white">
       
       {/* Search Box */}
       <div className="flex items-center gap-2 w-[40%]">
@@ -27,8 +31,8 @@ const SearchBar = () => {
             className="w-10 h-10 rounded-full border"
           />
           <div>
-            <p className="font-semibold text-gray-800">John Doe</p>
-            <p className="text-sm text-gray-500">2nd Year</p>
+            <p className="font-semibold ">{user.name}</p>
+            <p className="text-sm text-gray-500">{user.year}</p>
           </div>
         </div>
         {/* Notification */}
