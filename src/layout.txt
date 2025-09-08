@@ -31,7 +31,7 @@ dashboard :
 
 
 Nested routes in React Router must use relative paths (no leading /).
-Absolute paths (starting with /) always begin from the root (/).
+Absolute paths (startring with /) always begin from the root (/).
 <Link to> can take either an absolute path (/dashboard/courses/c001) or a relative path (courses/c001).
 Use relative paths inside nested components for cleaner routing.
 Use absolute paths when linking from outside the parent route.
